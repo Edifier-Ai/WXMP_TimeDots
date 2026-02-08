@@ -1,0 +1,75 @@
+/* TimeDots - 极简全局样式 */
+
+page {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', sans-serif;
+  font-weight: 300;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 通用容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 点样式 */
+.dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.dot-hollow {
+  background-color: transparent;
+  border: 1rpx solid #000000;
+}
+
+/* 文字样式 */
+.text-title {
+  font-size: 48rpx;
+  font-weight: 200;
+  letter-spacing: 4rpx;
+}
+
+.text-body {
+  font-size: 28rpx;
+  font-weight: 300;
+  color: #333333;
+}
+
+.text-small {
+  font-size: 24rpx;
+  font-weight: 300;
+  color: #666666;
+}
+
+/* 按钮样式 */
+.btn-minimal {
+  background-color: transparent;
+  border: 1rpx solid #000000;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: 300;
+  padding: 20rpx 60rpx;
+  border-radius: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.btn-minimal::after {
+  border: none;
+}
+
+.btn-minimal:active {
+  background-color: #000000;
+  color: #FFFFFF;
+}

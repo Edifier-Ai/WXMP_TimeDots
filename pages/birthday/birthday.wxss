@@ -1,0 +1,184 @@
+/* 生日选择页面样式 */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 80rpx 60rpx;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+}
+
+/* 头部区域 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100rpx;
+}
+
+.dot-decoration {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 40rpx;
+}
+
+.dot-decoration .dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.title {
+  font-size: 56rpx;
+  font-weight: 200;
+  letter-spacing: 8rpx;
+  color: #000000;
+  margin-bottom: 20rpx;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  font-weight: 300;
+  color: #666666;
+  letter-spacing: 2rpx;
+}
+
+/* 生日选择区域 */
+.birthday-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 30rpx;
+}
+
+.date-picker {
+  border: 1rpx solid #CCCCCC;
+  padding: 30rpx 80rpx;
+  min-width: 400rpx;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.date-picker text {
+  font-size: 32rpx;
+  font-weight: 300;
+  color: #999999;
+}
+
+.date-picker.has-value text {
+  color: #000000;
+  font-weight: 400;
+}
+
+.date-picker:active {
+  background-color: #F5F5F5;
+}
+
+/* 结果区域 */
+.result-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80rpx;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.result-number {
+  font-size: 80rpx;
+  font-weight: 200;
+  color: #000000;
+  letter-spacing: 4rpx;
+}
+
+.result-label {
+  font-size: 26rpx;
+  font-weight: 300;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.result-divider {
+  width: 60rpx;
+  height: 1rpx;
+  background-color: #CCCCCC;
+  margin: 30rpx 0;
+}
+
+.result-note {
+  margin-top: 40rpx;
+}
+
+.result-note text {
+  font-size: 22rpx;
+  font-weight: 300;
+  color: #999999;
+}
+
+/* 按钮区域 */
+.action-section {
+  margin-top: 20rpx;
+}
+
+.start-btn {
+  background-color: transparent;
+  border: 1rpx solid #000000;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: 300;
+  padding: 24rpx 80rpx;
+  border-radius: 0;
+  letter-spacing: 4rpx;
+}
+
+.start-btn::after {
+  border: none;
+}
+
+.start-btn:active {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* 底部装饰 */
+.footer-dots {
+  position: fixed;
+  bottom: 80rpx;
+  display: flex;
+  gap: 12rpx;
+}
+
+.footer-dots .dot {
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background-color: #CCCCCC;
+}

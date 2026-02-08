@@ -1,0 +1,22 @@
+{
+  "compileType": "miniprogram",
+  "setting": {
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmRelationList": [],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "appid": "touristappid",
+  "projectname": "TimeDots",
+  "description": "时间点阵 - 感知生命中每一刻的流逝",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "cloudbaseRoot": "cloudbase/"
+}

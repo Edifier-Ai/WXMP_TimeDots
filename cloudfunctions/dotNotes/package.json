@@ -1,0 +1,9 @@
+{
+    "name": "dotNotes",
+    "version": "1.0.0",
+    "description": "时间点文字记录管理",
+    "main": "index.js",
+    "dependencies": {
+        "wx-server-sdk": "~2.6.3"
+    }
+}

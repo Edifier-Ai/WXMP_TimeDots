@@ -1,0 +1,68 @@
+<view class="container">
+  <!-- Canvas 点阵区域 -->
+  <canvas 
+    type="2d" 
+    id="dotsCanvas" 
+    class="dots-canvas"
+    bindtap="onCanvasTap"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd"
+  ></canvas>
+
+  <!-- 顶部信息栏 -->
+  <view class="info-bar top-bar">
+    <view class="back-btn" bindtap="onBack">
+      <text>←</text>
+    </view>
+    <view class="life-info">
+      <text class="passed-text">{{passedDays}} 天已过</text>
+    </view>
+  </view>
+
+  <!-- 底部时间单位指示器 -->
+  <view class="unit-indicator">
+    <view class="unit-dots">
+      <view 
+        wx:for="{{units}}" 
+        wx:key="key"
+        class="unit-dot {{currentUnit === item.key ? 'active' : ''}}"
+      ></view>
+    </view>
+    <text class="unit-label">{{currentUnitLabel}}</text>
+    <text class="unit-hint">双指缩放切换时间单位</text>
+  </view>
+
+  <!-- 文字编辑弹窗 -->
+  <view class="note-modal" wx:if="{{showNoteModal}}">
+    <view class="modal-mask" bindtap="closeNoteModal"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="time-info">{{currentDotInfo.timeText}}</text>
+      </view>
+      <view class="modal-body">
+        <textarea 
+          class="note-input" 
+          placeholder="在此记录这一刻的想法与感悟..."
+          value="{{currentNote}}"
+          bindinput="onNoteInput"
+          maxlength="500"
+          auto-focus
+        ></textarea>
+        <text class="char-count">{{currentNote.length}}/500</text>
+      </view>
+      <view class="modal-footer">
+        <button class="btn-cancel" bindtap="closeNoteModal">取消</button>
+        <button class="btn-delete" wx:if="{{isEditingNote}}" bindtap="deleteNote">删除</button>
+        <button class="btn-save" bindtap="saveNote">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载动画 -->
+  <view class="loading-overlay" wx:if="{{isLoading}}">
+    <view class="loading-dots">
+      <view class="dot" wx:for="{{3}}" wx:key="index" style="animation-delay: {{index * 0.2}}s"></view>
+    </view>
+  </view>
+</view>

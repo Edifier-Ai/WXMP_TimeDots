@@ -1,0 +1,58 @@
+<view class="container">
+  <!-- 标题区域 -->
+  <view class="header">
+    <view class="dot-decoration">
+      <view class="dot" wx:for="{{decorDots}}" wx:key="index"></view>
+    </view>
+    <text class="title">时间点阵</text>
+    <text class="subtitle">感知生命中每一刻的流逝</text>
+  </view>
+
+  <!-- 生日选择区域 -->
+  <view class="birthday-section">
+    <text class="label">选择你的生日</text>
+    
+    <picker 
+      mode="date" 
+      value="{{birthday}}" 
+      start="1900-01-01" 
+      end="{{today}}"
+      bindchange="onBirthdayChange"
+    >
+      <view class="date-picker {{birthday ? 'has-value' : ''}}">
+        <text>{{birthday || '点击选择日期'}}</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 计算结果区域 -->
+  <view class="result-section" wx:if="{{birthday}}">
+    <view class="result-item">
+      <text class="result-number">{{passedDays}}</text>
+      <text class="result-label">天已经过去</text>
+    </view>
+    
+    <view class="result-divider"></view>
+    
+    <view class="result-item">
+      <text class="result-number">{{remainingDays}}</text>
+      <text class="result-label">天等待你去书写</text>
+    </view>
+    
+    <view class="result-note">
+      <text>基于30000天的一生</text>
+    </view>
+  </view>
+
+  <!-- 开始按钮 -->
+  <view class="action-section" wx:if="{{birthday}}">
+    <button class="btn-minimal start-btn" bindtap="onStart">
+      开始感知时间
+    </button>
+  </view>
+
+  <!-- 底部装饰 -->
+  <view class="footer-dots">
+    <view class="dot" wx:for="{{footerDots}}" wx:key="index"></view>
+  </view>
+</view>
